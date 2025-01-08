@@ -9,4 +9,4 @@ Cách chạy dự án
 
  + import cơ sở dữ liệu vào phpmyadmin
 
- + vào dự án mở tab terminal gõ lệnh: php -S localhost:8080
+ + vào dự án mở tab terminal gõ lệnh: php -S localhost:8088
