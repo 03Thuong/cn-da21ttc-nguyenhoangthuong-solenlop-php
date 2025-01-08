@@ -1,0 +1,663 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #3da6f5;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    height:60px;
+}
+
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    margin-left: 240px; /* Đẩy h1 sang phải 100px */
+    color: white;
+}
+
+.header .logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.actions a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.actions a:hover {
+    color: #320391;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #3da6f5;
+    color: #fff;
+    width: 18%;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -50px;
+}
+
+.user-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Đảm bảo hình tròn */
+    overflow: hidden; /* Cắt ảnh vượt ra ngoài khung */
+    margin: 0 auto 10px;
+}
+
+.user-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh bao phủ toàn bộ khung */
+    display: block;
+}
+
+
+.menu {
+    list-style: none;
+    margin-left: 10px;
+
+}
+
+.menu a {
+    text-decoration: none; /* Loại bỏ gạch chân của liên kết */
+    color:white;
+  }
+  
+  .menu a:hover {
+    background-color: #318bd6;
+    border-radius: 5px;
+  }
+  
+
+.menu li {
+    padding: 10px 0;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.menu li:hover {
+    background-color: #318bd6;
+    border-radius: 5px;
+}
+
+.menu li.active {
+    background-color: #318bd6; /* Màu nền sáng khi mục đang được chọn */
+    color: white; /* Đổi màu chữ khi mục được chọn */
+    font-weight: bold; /* Làm cho chữ đậm lên */
+}
+
+.main-content {
+    background-color: #f5f5f5;
+    flex: 1;
+    padding: 20px;
+}
+
+.content h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.btn-add {
+    padding: 8px;
+    font-size: 14px;
+}
+
+
+.btn-add {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top:25px;
+    
+}
+
+.btn-add:hover {
+    font-weight: bold; /* Chữ in đậm khi hover */
+    background-color: #45a049; /* Màu nền tối hơn khi hover */
+}
+
+.search {
+    float: right;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 500px; /* Đặt chiều rộng của thanh tìm kiếm */
+    display: flex;
+    align-items: center;
+    position: relative; /* Để đặt icon trong input */
+    margin-top:10px;
+}
+
+.search input {
+    width: 100%; /* Đảm bảo input chiếm toàn bộ không gian của .search */
+    padding: 5px 30px 5px 10px; /* Thêm padding bên phải để tạo không gian cho icon */
+}
+
+.search i {
+    position: absolute;
+    right: 20px; /* Khoảng cách từ bên trái */
+    top: 50%;
+    transform: translateY(-50%); /* Căn giữa icon theo chiều dọc */
+    color: #262424; /* Màu sắc của icon */
+}
+
+
+.search-kh {
+    float: right;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 500px; /* Đặt chiều rộng của thanh tìm kiếm */
+    display: flex;
+    align-items: center;
+    position: relative; /* Để đặt icon trong input */
+    margin-top:-20px;
+}
+.form-group-hk{
+ margin-right:15px;
+}
+.search-kh input {
+    width: 100%; /* Đảm bảo input chiếm toàn bộ không gian của .search */
+    padding: 5px 30px 5px 10px; /* Thêm padding bên phải để tạo không gian cho icon */
+}
+/* sinhvien*/
+/* styles.css */
+.form-container-sv {
+    display: flex; /* Sử dụng Flexbox */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-top:20px;
+    margin-bottom:25px;
+}
+
+.form-group-sv {
+    display: flex; /* Sử dụng Flexbox cho mỗi nhóm */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-right: 20px; /* Khoảng cách giữa các nhóm */
+}
+
+.form-group-sv label {
+    margin-right: 10px; /* Khoảng cách giữa label và select */
+}
+
+
+
+.search-kh i {
+    position: absolute;
+    right: 20px; /* Khoảng cách từ bên trái */
+    top: 50%;
+    transform: translateY(-50%); /* Căn giữa icon theo chiều dọc */
+    color: #262424; /* Màu sắc của icon */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+table th {
+    background-color: #2BA6E8;
+    font-weight: bold;
+} 
+
+table th, table td {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+}
+
+table tbody tr td[colspan="7"] {
+    text-align: center;
+    color: #999;
+}
+
+
+.btn-edit, .btn-delete {
+        padding: 5px 25px; /* Tăng kích thước padding để nút dài hơn */
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        margin: 0 5px;
+        width: auto; /* Để chiều rộng tự động căn chỉnh theo nội dung nút */
+}
+
+.btn-edit {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #e53935;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete:hover {
+    background-color: #b71c1c;
+}
+
+.btn-add{
+    font-weight: bold;
+}
+
+
+/* Them gv */
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-form label {
+    font-weight: bold;
+    color: #555;
+}
+
+.add-form input, 
+.add-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.add-form input:focus, 
+.add-form select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+.btn-save, .btn-cancel {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-save {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.btn-cancel {
+    background-color: #e53935;
+    color: #fff;
+}
+
+.btn-save:hover {
+    background-color: #45a049;
+}
+
+.btn-cancel:hover {
+    background-color: #b71c1c;
+}
+
+/* Lọc */
+.filter {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.filter select {
+    height: 25px; /* Chiều cao */
+    width: 150px; /* Chiều rộng */
+    margin-right: 10px; /* Khoảng cách giữa các select */
+    border-radius: 5px;
+}
+
+.filter label {
+    margin-right: 10px; /* Khoảng cách giữa label và select */
+    font-size: 16px;
+}
+/* nút thoát quản lý chi tiết sổ lên lớp */
+.btn-exit{
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: -32px;
+    position: relative; /* Thiết lập vị trí tương đối */
+    left: -500px; /* Dịch nút qua trái 100px */
+    width:100px;
+    font-size: 14px;
+}
+.btn-exit:hover {
+    background-color: #c82333;
+}
+
+.summary {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+.summary-table th, .summary-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.summary-title {
+    margin-top: 50px;
+    margin-bottom: -10px;
+}
+
+
+
+
+
+/* Export */
+.form-import {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Khoảng cách giữa các nhóm cột */
+}
+
+.form-import-group {
+    flex: 1 1 calc(33% - 10px); /* Chia đều 3 cột và giảm khoảng cách */
+    box-sizing: border-box;
+}
+
+.select-import {
+    width: 250px; /* Đảm bảo các input, select chiếm hết cột */
+    height:30px;
+}
+.input-import {
+    width: 180px; /* Đảm bảo các input, select chiếm hết cột */
+    height:30px;
+    margin-top: 5px;
+}
+
+.select-import-kh {
+    width: 100px; /* Đảm bảo các input, select chiếm hết cột */
+    height:30px;
+}
+
+.btn-import {
+    display: inline-flex;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-import i {
+    margin-right: 8px; /* Khoảng cách giữa icon và text */
+}
+
+.btn-import:hover {
+    background-color: #0056b3; /* Hiệu ứng khi hover */
+}
+
+.form-import label {
+    font-weight: bold; /* Hiển thị label đậm */
+}
+
+.btn-export {
+    display: inline-flex;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+}
+
+.btn-export i {
+    margin-right: 8px; /* Khoảng cách giữa biểu tượng và text */
+}
+
+.select-export{
+    display: inline-flex;
+    align-items: center;
+    background-color: #a3caf4;
+    padding: 8px 10px;
+    border: 1px solid black; /* Thêm viền màu đen */
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    margin-right:10px;
+}
+
+.export{
+    margin-top:20px;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 10px 0;
+    background-color: #d2eff1;
+    font-size: 16px; /* Giảm font-size tổng thể */
+    border-radius: 4px;
+    margin-top: 20px;
+    width: fit-content; /* Giam chieu rong pagination */
+    margin: 20px auto 0; /* Khoang cach 20px phia tren */
+}
+
+.page-item {
+    margin: 0px;
+    display: inline-block; /* Giúp từng item có khung riêng biệt */
+    border: 1px solid #f6f6f6; /* Thêm viền khung cho từng item */
+}
+
+.page-link {
+    text-decoration: none;
+    color: #0c0c0c;
+    padding: 6px 10px; /* Giảm padding */
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 14px; /* Giảm kích thước chữ */
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+}
+
+
+
+
+
+/* form sổ lên lớp */
+.form-sll {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%; /* Chiều rộng tối đa của form */
+    margin: 0 auto; /* Canh giữa form */
+    gap: 20px; /* Khoảng cách giữa các cột */
+    margin-bottom: 20px;
+}
+
+/* Chia form làm 2 cột */
+.form-sll .column {
+    flex: 1; /* Chia đều không gian cho 2 cột */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Khoảng cách giữa các dòng trong cột */
+}
+
+.form-sll div {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.form-sll label {
+    flex: 0 0 40%; /* Chiếm 40% chiều rộng */
+    margin-right: 10px; /* Khoảng cách giữa label và input */
+    text-align: right; /* Canh phải cho label */
+    font-weight: bold;
+}
+
+.form-sll input {
+    flex: 1; /* Input chiếm toàn bộ không gian còn lại */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Điều chỉnh chiều rộng riêng */
+.form-sll input.width-small {
+    width: 300px; /* Chiều rộng cố định */
+    flex: none; /* Không mở rộng */
+}
+
+.form-sll input.width-large {
+    width: 700px; /* Chiếm toàn bộ chiều rộng */
+    flex: 1;
+    margin-right:40px
+}
+
+/* Thông tin tài khoản */
+.thong-ke {
+    padding: 20px;
+    width: 80%; /* Đặt chiều rộng 60% */
+    margin: 0 auto; /* Giữa trang */
+    background-color: #ffffff; /* Nền trắng cho sạch sẽ */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ cho độ sâu */
+}
+
+.thong-ke h2 {
+    text-align: center; /* Canh giữa tiêu đề */
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #4A90E2; /* Màu xanh nhẹ cho tiêu đề */
+    font-family: 'Arial', sans-serif;
+}
+
+.thong-ke table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.thong-ke th, .thong-ke td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #E1E1E1; /* Viền nhẹ màu xám sáng */
+    font-size: 16px;
+    color: #555555; /* Màu chữ nhẹ, dễ đọc */
+    font-family: 'Arial', sans-serif;
+    text-align: center; /* Căn giữa nội dung theo chiều ngang */
+    vertical-align: middle; /* Căn giữa nội dung theo chiều dọc */
+    white-space: nowrap; /* Đảm bảo nội dung không bị ngắt dòng */
+}
+
+/* Chỉnh sửa cho th (header) để chiều cao nhỏ hơn td */
+.thong-ke th {
+    color: rgb(6, 5, 5);
+    font-weight: bold;
+    padding: 8px 10px; /* Giảm padding cho th để chiều cao ngắn hơn td */
+    width:30%;
+}
+
+/* Các dòng chẵn trong bảng */
+.thong-ke tr:nth-child(even) {
+    background-color: #F7F7F7; /* Màu nền xám sáng cho các dòng chẵn */
+}
+
+/* Khi hover trên các dòng */
+.thong-ke tr:hover {
+    background-color: #E1F5FE; /* Màu nền sáng xanh khi hover */
+    cursor: pointer; /* Thêm con trỏ pointer để người dùng biết có thể tương tác */
+}

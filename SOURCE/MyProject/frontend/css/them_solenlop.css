@@ -1,0 +1,88 @@
+.form {
+    display: flex;
+    gap: 30px;
+    margin-left:60px;
+}
+
+.form-left, .form-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.form-right {
+    margin-left: -100px; /* Di chuyển phần .form-right sang trái */
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input {
+    width: 500px;
+    height: 25px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Cấu hình cho nhóm nút */
+.button-group {
+    display: flex;
+    gap: 15px; /* Khoảng cách giữa các nút */
+}
+
+/* Cấu hình cho nút "LƯU" */
+.btn-save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #4CAF50; /* Màu xanh */
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 120px; /* Chiều dài 120px */
+    color: white; /* Màu chữ trắng */
+}
+
+/* Màu khi hover vào nút LƯU */
+.btn-save:hover {
+    background-color: #45a049; /* Màu xanh đậm hơn khi hover */
+}
+
+/* Cấu hình cho icon trong nút LƯU */
+.fa-save {
+    margin-right: 8px; /* Khoảng cách giữa icon và text */
+    font-size: 20px; /* Kích thước icon */
+}
+
+/* Cấu hình cho nút "THOÁT" */
+.btn-exit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f44336; /* Màu đỏ */
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 120px; /* Chiều dài 120px */
+    color: white; /* Màu chữ trắng */
+}
+
+/* Màu khi hover vào nút THOÁT */
+.btn-exit:hover {
+    background-color: #e53935; /* Màu đỏ đậm hơn khi hover */
+}
+
+/* Cấu hình cho icon trong nút THOÁT */
+.fa-times {
+    margin-right: 8px; /* Khoảng cách giữa icon và text */
+    font-size: 20px; /* Kích thước icon */
+}

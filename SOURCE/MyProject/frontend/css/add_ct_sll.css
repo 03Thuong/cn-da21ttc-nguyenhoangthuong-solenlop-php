@@ -1,0 +1,115 @@
+   .add-attendance-form {
+        width: 100%;
+        max-width: 70%;
+        margin: 0 auto;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .form-section {
+        flex: 1 1 45%;
+        margin-right: 30px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+    .form-actions {
+        text-align: center;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .btn-submit {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .btn-reset {
+        padding: 10px 20px;
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    .btn-submit:hover {
+        background-color: #218838;
+    }
+    .btn-reset:hover {
+        background-color: #c82333;
+    }
+    
+    .main h2 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    /* Container cho cả group */
+.form-group-check {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 10px; /* Khoảng cách giữa nhãn và checkbox container */
+}
+
+/* Căn chỉnh nhãn chính */
+.form-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0; /* Loại bỏ khoảng cách mặc định */
+    white-space: nowrap; /* Đảm bảo nội dung không xuống dòng */
+}
+
+/* Container cho checkbox và nhãn phụ */
+.checkbox-container {
+    display: flex;
+    align-items: center; /* Căn giữa checkbox và nhãn phụ theo chiều dọc */
+    gap: 5px; /* Khoảng cách giữa checkbox và nhãn phụ */
+
+}
+
+/* Checkbox tùy chỉnh */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #007bff; /* Màu checkbox (hỗ trợ trình duyệt hiện đại) */
+    cursor: pointer;
+}
+
+/* Label phụ */
+#xacnhangv-label {
+    font-size: 14px;
+
+    color: #333;
+    cursor: pointer; /* Trỏ chuột thay đổi khi hover */
+}
+
+/* Hiệu ứng hover cho label */
+#xacnhangv-label:hover {
+    color: #007bff;
+}

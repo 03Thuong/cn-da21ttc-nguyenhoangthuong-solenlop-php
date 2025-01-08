@@ -1,0 +1,12 @@
+Cài đặt
+ + Xampp phiên bản từ 7.33 đến 8.1
+ 
+Cách chạy dự án
+
+ + git clone https://github.com/03Thuong/cn-da21ttc-nguyenhoangthuong-solenlop-php.git
+
+ + giải nén vào thư mục Xampp/htdoc/your file name
+
+ + import cơ sở dữ liệu vào phpmyadmin
+
+ + vào dự án mở tab terminal gõ lệnh: php -S localhost:8080

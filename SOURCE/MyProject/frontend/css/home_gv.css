@@ -1,0 +1,753 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2BA6E8;
+    color: white;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.header .user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-info .logout {
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    justify-content: left;
+    background-color: #2BA6E8;
+    padding: 10px 0;
+    gap: 20px; /* Tao khoang cach giua cac muc menu */
+    margin-right: 50px;
+    width: 100%;
+    margin-top: -30px;
+}
+
+.menu a {
+    text-decoration: none; /* Xoa gach chan duoi lien ket */
+    font-size: 16px;
+    color: white; /* Mau chu */
+    padding: 10px 20px;
+    border-radius: 8px; /* Bo tron goc */
+    background-color: transparent;
+    transition: all 0.3s ease; /* Hieu ung chuyen dong */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Khoang cach giua icon va text */
+    font-weight: bold;
+}
+
+.menu a:hover {
+    background-color: white; /* Mau nen khi hover */
+    color: #2BA6E8; /* Mau chu khi hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Do bong khi hover */
+}
+
+
+
+.main {
+    padding: 20px;
+}
+
+
+.filter select,
+.btn-add {
+    padding: 8px;
+    font-size: 14px;
+}
+
+.btn-add {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-add:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 60px;
+}
+
+table thead {
+    background-color: #2BA6E8;
+    color: black;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.no-data {
+    color: grey;
+}
+
+table .btn-edit,
+table .btn-delete {
+    display: inline-block; /* Đảm bảo nút chỉ thay đổi kích thước mà không thay đổi td */
+    padding: 5px 20px; /* Tăng kích thước padding để nút dài hơn */
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0 5px;
+    width: auto; /* Để chiều rộng tự động căn chỉnh theo nội dung nút */
+}
+
+table .btn-edit {
+    background-color: #007bff;
+    color: white;
+}
+
+table .btn-delete {
+    background-color: #e53935;
+    color: white;
+}
+
+table .btn-edit:hover {
+    background-color: #0056b3;
+}
+
+table .btn-delete:hover {
+    background-color: #b71c1c;
+}
+
+
+
+/*--------------SEARCH_______________*/
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    width: 500px; /* Chiều rộng của thanh tìm kiếm */
+}
+
+.search-bar input {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%; /* Đảm bảo ô nhập liệu chiếm toàn bộ chiều rộng của search-bar */
+}
+
+.search-bar button {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Lề phải của nút */
+    transform: translateY(-50%); /* Căn giữa nút theo chiều dọc */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #1c1c1d;
+}
+
+
+
+.search-bar button:hover {
+    color: #034c7d;
+}
+
+/* Chi tiết sổ lên lớp */
+/* CSS chỉnh sửa bảng */
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    word-wrap: break-word; /* Đảm bảo nội dung được tự động xuống dòng */
+}
+
+.attendance-table th, 
+.attendance-table td {
+    border: 1px solid #ddd;
+    padding: 6px; /* Giảm padding để tiết kiệm không gian */
+    text-align: center;
+    vertical-align: middle; /* Canh giữa theo chiều dọc */
+    max-width: 200px; /* Giới hạn chiều rộng nội dung */
+    overflow: hidden; /* Ẩn nội dung tràn */
+
+    white-space: nowrap; /* Không cho xuống dòng */
+}
+
+.attendance-table th {
+    background-color: #2BA6E8;
+    font-weight: bold;
+    font-size: 14px; /* Kích thước chữ tiêu đề */
+}
+
+.attendance-table td.long-content {
+    font-size: 12px; /* Giảm kích thước chữ nếu nội dung dài */
+}
+
+.attendance-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.attendance-table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* CSS cho các nút chức năng */
+
+
+/* CSS cho tooltip hiển thị nội dung dài */
+.attendance-table td[title] {
+    position: relative;
+}
+
+.attendance-table td[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: normal; /* Cho phép xuống dòng */
+    z-index: 10;
+    font-size: 12px;
+    max-width: 400px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive cho màn hình nhỏ */
+@media screen and (max-width: 768px) {
+    .attendance-table th, 
+    .attendance-table td {
+        font-size: 12px; /* Giảm kích thước chữ trên màn hình nhỏ */
+        padding: 4px;
+    }
+
+    .attendance-table .btn-edit,
+    .attendance-table .btn-delete,
+    .attendance-table .btn-attendance {
+        width: 25px; /* Giảm kích thước nút trên màn hình nhỏ */
+        height: 30px;
+        font-size: 10px;
+        line-height: 25px;
+    }
+}
+
+
+.btn-edit, .btn-attendance {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.btn-attendance {
+    background-color: #ffc107;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.btn-attendance:hover {
+    background-color: #e0a800; /* Darker shade of #ffc107 */
+}
+
+.summary {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-table {
+    width: 50%;
+    border-collapse: collapse;
+}
+
+.summary-table th, .summary-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.btn-add-chitiet {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: -18px;
+    position: relative; /* Thiết lập vị trí tương đối */
+    left: -620px; /* Dịch nút qua trái 100px */
+    width:100px;
+    font-size: 14px;
+}
+
+.summary-title {
+    margin-top: 50px;
+    margin-bottom: -10px;
+}
+
+/* form sổ lên lớp */
+.form-sll {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%; /* Chiều rộng tối đa của form */
+    margin: 0 auto; /* Canh giữa form */
+    gap: 20px; /* Khoảng cách giữa các cột */
+    margin-bottom: 20px;
+}
+
+/* Chia form làm 2 cột */
+.form-sll .column {
+    flex: 1; /* Chia đều không gian cho 2 cột */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Khoảng cách giữa các dòng trong cột */
+}
+
+.form-sll div {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.form-sll label {
+    flex: 0 0 40%; /* Chiếm 40% chiều rộng */
+    margin-right: 10px; /* Khoảng cách giữa label và input */
+    text-align: right; /* Canh phải cho label */
+    font-weight: bold;
+}
+
+.form-sll input {
+    flex: 1; /* Input chiếm toàn bộ không gian còn lại */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Điều chỉnh chiều rộng riêng */
+.form-sll input.width-small {
+    width: 350px; /* Chiều rộng cố định */
+    flex: none; /* Không mở rộng */
+}
+
+.form-sll input.width-large {
+    width: 950px; /* Chiếm toàn bộ chiều rộng */
+    flex: 1;
+    margin-right:40px
+
+}
+
+/* Thông tin tài khoản */
+.account-info {
+    padding: 20px;
+    width: 80%; /* Đặt chiều rộng 60% */
+    margin: 0 auto; /* Giữa trang */
+    background-color: #ffffff; /* Nền trắng cho sạch sẽ */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ cho độ sâu */
+}
+
+.account-info h2 {
+    text-align: center; /* Canh giữa tiêu đề */
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #4A90E2; /* Màu xanh nhẹ cho tiêu đề */
+    font-family: 'Arial', sans-serif;
+}
+
+.account-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.account-info th, .account-info td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #E1E1E1; /* Viền nhẹ màu xám sáng */
+    font-size: 16px;
+    color: #555555; /* Màu chữ nhẹ, dễ đọc */
+    font-family: 'Arial', sans-serif;
+    text-align: center; /* Căn giữa nội dung theo chiều ngang */
+    vertical-align: middle; /* Căn giữa nội dung theo chiều dọc */
+    white-space: nowrap; /* Đảm bảo nội dung không bị ngắt dòng */
+}
+
+/* Chỉnh sửa cho th (header) để chiều cao nhỏ hơn td */
+.account-info th {
+    color: rgb(6, 5, 5);
+    font-weight: bold;
+    padding: 8px 10px; /* Giảm padding cho th để chiều cao ngắn hơn td */
+    width:30%;
+}
+
+/* Các dòng chẵn trong bảng */
+.account-info tr:nth-child(even) {
+    background-color: #F7F7F7; /* Màu nền xám sáng cho các dòng chẵn */
+}
+
+/* Khi hover trên các dòng */
+.account-info tr:hover {
+    background-color: #E1F5FE; /* Màu nền sáng xanh khi hover */
+    cursor: pointer; /* Thêm con trỏ pointer để người dùng biết có thể tương tác */
+}
+
+/* Diem danh */
+.btn-save {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-exit {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.btn-save:hover {
+    background-color: #218838;
+}
+.btn-exit:hover {
+    background-color: #c82333;
+}
+
+
+/* kế thừa search, select của admin*/
+.search-kh {
+    float: right;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 500px; /* Đặt chiều rộng của thanh tìm kiếm */
+    display: flex;
+    align-items: center;
+    position: relative; /* Để đặt icon trong input */
+    margin-top:-20px;
+}
+
+.search-kh input {
+    width: 100%; /* Đảm bảo input chiếm toàn bộ không gian của .search */
+    padding: 5px 30px 5px 10px; /* Thêm padding bên phải để tạo không gian cho icon */
+}
+.form-group-hk {
+    margin-left: 100px; /* Dịch toàn bộ phần tử sang phải 100px */
+}
+
+.logout {
+    display: inline-flex; /* Để biểu tượng và chữ căn chỉnh trên cùng một dòng */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    text-decoration: none; /* Loại bỏ gạch chân mặc định của liên kết */
+    color: #fdf5f5; /* Màu chữ */
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px; /* Bo góc */
+    transition: background-color 0.3s, color 0.3s; /* Hiệu ứng khi hover */
+}
+
+.search-kh i {
+    position: absolute;
+    right: 30px; /* Khoảng cách từ bên trái */
+    top: 50%;
+    transform: translateY(-50%); /* Căn giữa icon theo chiều dọc */
+    color: #262424; /* Màu sắc của icon */
+}
+.select-import {
+    width: 250px; /* Đảm bảo các input, select chiếm hết cột */
+    height:30px;
+
+} 
+
+/* nút thoát quản lý chi tiết sổ lên lớp */
+.btn-exit{
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: -20px;
+    position: relative; /* Thiết lập vị trí tương đối */
+    left: -600px; /* Dịch nút qua trái 100px */
+    width:100px;
+    font-size: 14px;
+}
+.btn-exit:hover {
+    background-color: #c82333;
+}
+
+/*phân trang*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 10px 0;
+    background-color: #d2eff1;
+    font-size: 16px; /* Giảm font-size tổng thể */
+    border-radius: 4px;
+    margin-top: 20px;
+    width: fit-content; /* Giam chieu rong pagination */
+    margin: 20px auto 0; /* Khoang cach 20px phia tren */
+}
+
+.page-item {
+    margin: 0px;
+    display: inline-block; /* Giúp từng item có khung riêng biệt */
+    border: 1px solid #f6f6f6; /* Thêm viền khung cho từng item */
+}
+
+.page-link {
+    text-decoration: none;
+    color: #0c0c0c;
+    padding: 6px 10px; /* Giảm padding */
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 14px; /* Giảm kích thước chữ */
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+}
+
+
+.btn-container {
+    display: flex;
+    align-items: center; /* Đảm bảo căn giữa theo chiều dọc */
+    gap: 16px; /* Khoảng cách giữa các nút */
+}
+
+.btn-add-ct,
+.btn-export {
+    padding: 8px;
+    font-size: 14px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn-add-ct {
+    background-color: #4CAF50;
+}
+
+.btn-add-ct:hover {
+    background-color: #45a049;
+}
+
+.btn-export {
+    background-color: #2196F3;
+}
+
+
+.nav-link {
+    color: black; /* Màu chữ mặc định */
+    text-decoration: none;
+}
+
+.nav-link.active {
+    color: blue; /* Màu chữ khi đang ở trang hiện tại */
+    font-weight: bold;
+}
+
+
+/* Export */
+.form-import {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Khoảng cách giữa các nhóm cột */
+}
+
+.form-import-group {
+    flex: 1 1 calc(33% - 10px); /* Chia đều 3 cột và giảm khoảng cách */
+    box-sizing: border-box;
+}
+
+.select-import {
+    width: 250px; /* Đảm bảo các input, select chiếm hết cột */
+    height:30px;
+}
+.input-import {
+    width: 180px; /* Đảm bảo các input, select chiếm hết cột */
+    height:30px;
+    margin-top: 5px;
+}
+
+.select-import-kh {
+    width: 100px; /* Đảm bảo các input, select chiếm hết cột */
+    height:30px;
+}
+
+.btn-import {
+    display: inline-flex;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-import i {
+    margin-right: 8px; /* Khoảng cách giữa icon và text */
+}
+
+.btn-import:hover {
+    background-color: #0056b3; /* Hiệu ứng khi hover */
+}
+
+.form-import label {
+    font-weight: bold; /* Hiển thị label đậm */
+}
+
+.btn-export {
+    display: inline-flex;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+}
+
+.btn-export i {
+    margin-right: 8px; /* Khoảng cách giữa biểu tượng và text */
+}
+
+.select-export{
+    display: inline-flex;
+    align-items: center;
+    background-color: #a3caf4;
+    padding: 8px 10px;
+    border: 1px solid black; /* Thêm viền màu đen */
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    margin-right:10px;
+}
+
+.export{
+    margin-top:20px;
+}
+
+/* sinhvien*/
+/* styles.css */
+.form-container-sv {
+    display: flex; /* Sử dụng Flexbox */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-top:20px;
+    margin-bottom:25px;
+}
+
+.form-group-sv {
+    display: flex; /* Sử dụng Flexbox cho mỗi nhóm */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-right: 20px; /* Khoảng cách giữa các nhóm */
+}
+
+.form-group-sv label {
+    margin-right: 10px; /* Khoảng cách giữa label và select */
+}
+
+
+
+.search-kh {
+    float: right;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 400px; /* Đặt chiều rộng của thanh tìm kiếm */
+    display: flex;
+    align-items: center;
+    position: relative; /* Để đặt icon trong input */
+    margin-top:-20px;
+}
+.form-group-hk{
+ margin-right:15px;
+}
+.search-kh input {
+    width: 100%; /* Đảm bảo input chiếm toàn bộ không gian của .search */
+    padding: 5px 30px 5px 10px; /* Thêm padding bên phải để tạo không gian cho icon */
+}
